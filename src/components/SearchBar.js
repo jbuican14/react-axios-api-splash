@@ -6,7 +6,7 @@ class SearchBar extends React.Component {
 
     onFormSubmit = (e) =>  {
         e.preventDefault(); //prevent form to submit itself when user press enter
-        this.props.onSubmit(this.state.term)
+        this.props.onSubmit(this.state.term.trim());
     }
 
     render() {
@@ -19,7 +19,7 @@ class SearchBar extends React.Component {
                             value={this.state.term}
                             onChange={(e) => this.setState({ term: e.target.value })} />
                     </div>
-                </form>
+                </form>                
             </div>
         )
     }
